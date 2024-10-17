@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 2fr 2fr 6fr 2fr;
   height: 145px;
+  column-gap: 20px;
 }
 
 .logo-wrapper {
@@ -27,6 +28,7 @@
   display: grid;
   grid-template-columns: 2fr 4fr 4fr 2fr;
   background-color: #495e57;
+  column-gap: 20px;
 }
 
 .header-text-wrapper {
@@ -59,7 +61,7 @@
   font-size: 20px;
 }
 
-.button {
+.yellow-button {
   background-color: #f4ce14;
   width: 200px;
   height: 60px;
@@ -82,4 +84,74 @@
   border-radius: 20px;
   z-index: 10;
   transform: translateY(60px);
+}
+
+.card {
+  max-width: 265px;
+  max-height: 440px;
+  border: 1px solid #edefee;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.card-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ee9972;
+}
+
+.card-description {
+  font-weight: 400;
+  color: #495e57;
+}
+
+.card-delivery-text {
+  font-weight: 700;
+}
+
+.card-image {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.specials {
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  column-gap: 20px;
+  padding: 60px;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specials-title {
+  font-size: 32px;
+}
+
+.specials-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }

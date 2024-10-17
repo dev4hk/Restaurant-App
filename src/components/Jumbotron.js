@@ -1,6 +1,7 @@
 import React from "react";
 import "../style.css";
 import HeaderImage from "../assets/images/restauranfood.jpg";
+import Button from "./Button";
 
 const Jumbotron = () => {
   return (
@@ -15,7 +16,7 @@ const Jumbotron = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h5>
         </div>
-        <div className="button">Reserve a Table</div>
+        <Button className="yellow-button">Reserve a Table</Button>
       </div>
       <div className="header-image-wrapper">
         <img className="header-image" src={HeaderImage} alt="header-image" />
