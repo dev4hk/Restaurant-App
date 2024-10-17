@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+.navbar {
+  padding-left: 60px;
+  padding-right: 60px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 6fr 2fr;
+  height: 145px;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  padding: 20px 60px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 2fr 4fr 4fr 2fr;
+  background-color: #495e57;
+}
+
+.header-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-title {
+  color: #f4ce14;
+  font-size: 56px;
+  margin: 0;
+}
+
+.markazi-text {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-subtitle {
+  color: white;
+  margin: 10px 0px;
+  font-size: 32px;
+}
+
+.header-description {
+  color: white;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #f4ce14;
+  width: 200px;
+  height: 60px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-image-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-image {
+  max-width: 350px;
+  max-height: 390px;
+  border-radius: 20px;
+  z-index: 10;
+  transform: translateY(60px);
+}

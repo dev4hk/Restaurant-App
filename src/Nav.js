@@ -1,13 +1,16 @@
 import React from "react";
-import { ReactComponent as Logo } from "./images/Logo.svg";
+import { ReactComponent as Logo } from "./assets/images/Logo.svg";
+import "./style.css";
 
 const Nav = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Logo />
-        </li>
+    <nav className="navbar">
+      <div></div>
+      <div className="logo-wrapper">
+        <Logo />
+      </div>
+
+      <ul className="navbar-list">
         <li>
           <a href="#">Home</a>
         </li>
@@ -27,6 +30,7 @@ const Nav = () => {
           <a href="#">Login</a>
         </li>
       </ul>
+      <div></div>
     </nav>
   );
 };
