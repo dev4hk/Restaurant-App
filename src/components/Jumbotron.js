@@ -1,8 +1,8 @@
 import React from "react";
-import "./style.css";
-import HeaderImage from "./assets/images/restauranfood.jpg";
+import "../style.css";
+import HeaderImage from "../assets/images/restauranfood.jpg";
 
-const Header = () => {
+const Jumbotron = () => {
   return (
     <header className="header">
       <div></div>
@@ -25,4 +25,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Jumbotron;

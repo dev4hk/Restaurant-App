@@ -1,6 +1,7 @@
 import React from "react";
-import { ReactComponent as Logo } from "./assets/images/Logo.svg";
-import "./style.css";
+import { ReactComponent as Logo } from "../assets/images/Logo.svg";
+import "../style.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -12,22 +13,22 @@ const Nav = () => {
 
       <ul className="navbar-list">
         <li>
-          <a href="#">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="#">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
-          <a href="#">Reservations</a>
+          <Link to="/reservations">Reservations</Link>
         </li>
         <li>
-          <a href="#">Order online</a>
+          <Link to="/order-online">Order Online</Link>
         </li>
         <li>
-          <a href="#">Login</a>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
       <div></div>
