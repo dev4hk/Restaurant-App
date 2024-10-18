@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
 import Specials from "../components/Specials";
 import Testimonials from "../components/Testimonials";
+import Chicago from "../components/Chicago";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Jumbotron />
       <Specials />
       <Testimonials />
+      <Chicago />
       <Footer />
     </>
   );
