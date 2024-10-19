@@ -11,11 +11,11 @@ const Jumbotron = () => {
         <div>
           <h3 className="header-title">Little Lemon</h3>
           <h4 className="header-subtitle markazi-text">Chicago</h4>
-          <h5 className="header-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </h5>
         </div>
+        <h5 className="header-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </h5>
         <Button className="yellow-button">Reserve a Table</Button>
       </div>
       <div className="header-image-wrapper">
