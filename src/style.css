@@ -73,6 +73,12 @@
   cursor: pointer;
 }
 
+.yellow-button:hover {
+  background-color: black;
+  color: #f4ce14;
+  transition: 0.2s ease-in;
+}
+
 .header-image-wrapper {
   display: flex;
   justify-content: flex-end;
