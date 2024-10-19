@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as Logo } from "../assets/images/Logo.svg";
+import { ReactComponent as HamburgerMenu } from "../assets/images/icon _hamburger menu.svg";
 import "../style.css";
 import { Link } from "react-router-dom";
 
@@ -31,7 +32,9 @@ const Nav = () => {
           <Link to="/login">Login</Link>
         </li>
       </ul>
-      <div></div>
+      <div className="navbar-hamburger">
+        <HamburgerMenu />
+      </div>
     </nav>
   );
 };
