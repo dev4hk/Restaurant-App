@@ -6,7 +6,7 @@ const Specials = () => {
   return (
     <section className="specials">
       <div></div>
-      <div>
+      <article>
         <div className="specials-header">
           <h2 className="specials-title">This weeks specials!</h2>
           <Button className="yellow-button">Online Menu</Button>
@@ -16,7 +16,7 @@ const Specials = () => {
           <SpecialsCard />
           <SpecialsCard />
         </div>
-      </div>
+      </article>
       <div></div>
     </section>
   );

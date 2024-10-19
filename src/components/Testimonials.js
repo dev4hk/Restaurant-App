@@ -5,14 +5,14 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <h2 className="markazi-text testimonials-title">Testimonials</h2>
-      <div className="testimonials-cards">
+      <article className="testimonials-cards">
         <div></div>
         <TestimonialsCard />
         <TestimonialsCard />
         <TestimonialsCard />
         <TestimonialsCard />
         <div></div>
-      </div>
+      </article>
     </section>
   );
 };
