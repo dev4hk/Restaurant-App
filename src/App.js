@@ -7,6 +7,7 @@ import Menu from "./routes/Menu";
 import Reservations from "./routes/Reservations";
 import OnlineOrder from "./routes/OnlineOrder";
 import Login from "./routes/Login";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/order-online" element={<OnlineOrder />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
+      <Footer />
     </>
   );
 }
