@@ -96,12 +96,23 @@
 
 .specials-card {
   max-width: 265px;
-  max-height: 440px;
+  max-height: 450px;
   border: 1px solid #edefee;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+.specials-card:hover {
+  background-color: #495e57;
+  color: white;
+  transition: 0.2s ease-in;
+
+  & .specials-card-description {
+    color: white;
+  }
 }
 
 .specials-card-details {
