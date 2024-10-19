@@ -6,12 +6,12 @@ import Chicago from "../components/Chicago";
 
 const Home = () => {
   return (
-    <>
+    <main>
       <Jumbotron />
       <Specials />
       <Testimonials />
       <Chicago />
-    </>
+    </main>
   );
 };
 

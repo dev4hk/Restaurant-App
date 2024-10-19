@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Specials = () => {
   return (
-    <div className="specials">
+    <section className="specials">
       <div></div>
       <div>
         <div className="specials-header">
@@ -18,7 +18,7 @@ const Specials = () => {
         </div>
       </div>
       <div></div>
-    </div>
+    </section>
   );
 };
 

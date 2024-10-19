@@ -4,7 +4,7 @@ import ChicagoImageTwo from "../assets/images/restaurant.jpg";
 
 const Chicago = () => {
   return (
-    <div className="chicago">
+    <section className="chicago">
       <div></div>
       <div className="chicago-details">
         <h2 className="chicago-title">Little Lemon</h2>
@@ -30,7 +30,7 @@ const Chicago = () => {
         />
       </div>
       <div></div>
-    </div>
+    </section>
   );
 };
 

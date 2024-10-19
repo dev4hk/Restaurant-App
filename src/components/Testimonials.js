@@ -3,7 +3,7 @@ import TestimonialsCard from "./TestimonialsCard";
 
 const Testimonials = () => {
   return (
-    <div className="testimonials">
+    <section className="testimonials">
       <h2 className="markazi-text testimonials-title">Testimonials</h2>
       <div className="testimonials-cards">
         <div></div>
@@ -13,7 +13,7 @@ const Testimonials = () => {
         <TestimonialsCard />
         <div></div>
       </div>
-    </div>
+    </section>
   );
 };
 
