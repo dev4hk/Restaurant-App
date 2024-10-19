@@ -232,6 +232,7 @@
   margin: 0;
   font-weight: 500;
   font-size: 64px;
+  color: #f4ce14;
 }
 
 .chicago-subtitle {
@@ -265,4 +266,43 @@
   height: 320px;
   object-fit: cover;
   transform: translate(-20px, -20px);
+}
+
+.footer {
+  height: 450px;
+  display: grid;
+  grid-template-columns: repeat(6, 2fr);
+  column-gap: 20px;
+  padding: 60px;
+  background-color: #495e57;
+}
+
+.footer-image {
+  width: 100%;
+  object-fit: cover;
+  object-position: 25% 25%;
+  margin: auto 0px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 200px;
+  margin: auto 0px;
+}
+
+.footer-title {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #f4ce14;
+}
+
+.footer-links {
+  padding: 0px;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
 }

@@ -7,7 +7,7 @@ const Chicago = () => {
     <div className="chicago">
       <div></div>
       <div className="chicago-details">
-        <h2 className="markazi-text chicago-title">Little Lemon</h2>
+        <h2 className="chicago-title">Little Lemon</h2>
         <h3 className="markazi-text chicago-subtitle">Chicago</h3>
         <p className="chicago-description">
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet

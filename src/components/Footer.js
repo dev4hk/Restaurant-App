@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer>
-      <img src={footerImg} alt="footer-img" />
-      <div>
-        <h3>Doormat Navigation</h3>
-        <ul>
+    <footer className="footer">
+      <div></div>
+      <img className="footer-image" src={footerImg} alt="footer-img" />
+      <div className="footer-column">
+        <h3 className="footer-title">Doormat Navigation</h3>
+        <ul className="footer-links">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -29,9 +30,9 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
-        <h3>Contact</h3>
-        <ul>
+      <div className="footer-column">
+        <h3 className="footer-title">Contact</h3>
+        <ul className="footer-links">
           <li>
             <a>Address</a>
           </li>
@@ -43,9 +44,9 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div>
-        <h3>Social Media Links</h3>
-        <ul>
+      <div className="footer-column">
+        <h3 className="footer-title">Social Media Links</h3>
+        <ul className="footer-links">
           <li>
             <a>Address</a>
           </li>
@@ -57,6 +58,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+      <div></div>
     </footer>
   );
 };
