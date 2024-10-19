@@ -24,7 +24,7 @@
 
 .header {
   padding: 20px 60px;
-  height: 400px;
+  max-height: 400px;
   display: grid;
   grid-template-columns: 2fr 4fr 4fr 2fr;
   background-color: #495e57;
@@ -324,4 +324,216 @@
   font-weight: 500;
   font-size: 20px;
   color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-columns: 1fr 2fr 8fr 1fr;
+  }
+
+  .header {
+    padding: 20px 20px;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+  }
+
+  .header-description {
+    text-align: center;
+  }
+
+  .testimonials {
+    background-color: #495e57;
+    padding: 60px 20px;
+    height: 400px;
+  }
+
+  .testimonials-cards {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 2.5fr 2.5fr 2.5fr 1fr;
+    column-gap: 20px;
+  }
+
+  .chicago {
+    padding: 60px 20px;
+    grid-template-columns: 1fr 6fr 4fr 1fr;
+    max-height: 555px;
+  }
+
+  .chicago-details {
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  .chicago-title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 48px;
+    color: #f4ce14;
+  }
+
+  .footer {
+    height: 450px;
+    grid-template-columns: 1fr 2.5fr 2.5fr 2.5fr 2.5fr 1fr;
+    column-gap: 20px;
+    padding: 60px 20px;
+    background-color: #495e57;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+    grid-template-columns: 1fr 2fr 8fr 1fr;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .navbar-list {
+    display: none;
+  }
+
+  .header {
+    padding: 20px 10px;
+    padding-bottom: 40px;
+    display: block;
+  }
+
+  .header-text-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-title {
+    margin: 20px 0px;
+    margin-bottom: 0px;
+    font-size: 36px;
+  }
+
+  .header-subtitle {
+    font-size: 22px;
+    text-align: center;
+    margin: 0px auto;
+  }
+
+  .header-description {
+    margin: 20px 0px;
+  }
+
+  .header-image-wrapper {
+    display: none;
+  }
+
+  .specials {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 10px;
+  }
+
+  .specials-card {
+    margin: 20px auto;
+  }
+
+  .specials-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .specials-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 70px;
+  }
+
+  .testimonials-title {
+    margin-top: 0px;
+  }
+
+  .testimonials-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonials-card {
+    margin: 20px auto;
+  }
+
+  .chicago {
+    padding: 60px 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    max-height: max-content;
+  }
+
+  .chicago-details {
+    padding-right: 0px;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .chicago-title {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 36px;
+  }
+
+  .chicago-subtitle {
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+  }
+
+  .chicago-description {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .chicago-images {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chicago-image1 {
+    max-width: 390px;
+    transform: translate(0px, 0px);
+    margin: 20px 0px;
+  }
+
+  .chicago-image2 {
+    max-width: 390px;
+    transform: translate(0px, 0px);
+    margin: 20px 0px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-image {
+    display: none;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 6fr);
+    column-gap: 20px;
+  }
 }
