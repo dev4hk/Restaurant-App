@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes, setAvailableTimes }) => {
   const [form, setForm] = useState({
     firstname: "",
     lastname: "",
@@ -105,12 +105,11 @@ const BookingForm = () => {
             name="time"
             onChange={handleChange}
           >
-            <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option>
+            {availableTimes.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
           </select>
         </div>
         <Button className="yellow-button">Reserve a Table</Button>

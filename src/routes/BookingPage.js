@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import BookingForm from "../components/BookingForm";
 
-const BookingPage = () => {
+const BookingPage = ({ availableTimes, setAvailableTimes }) => {
   return (
-    <section className="booking">
+    <main className="booking">
       <div className="booking-page">
         <div></div>
-        <BookingForm />
+        <BookingForm
+          availableTimes={availableTimes}
+          setAvailableTimes={setAvailableTimes}
+        />
         <div></div>
       </div>
-    </section>
+    </main>
   );
 };
 

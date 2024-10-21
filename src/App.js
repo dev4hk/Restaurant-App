@@ -8,19 +8,13 @@ import OnlineOrder from "./routes/OnlineOrder";
 import Login from "./routes/Login";
 import Footer from "./components/Footer";
 import BookingPage from "./routes/BookingPage";
+import Main from "./components/Main";
 
 function App() {
   return (
     <>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
-        <Route path="/reservations" element={<BookingPage />}></Route>
-        <Route path="/order-online" element={<OnlineOrder />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
+      <Main />
       <Footer />
     </>
   );
