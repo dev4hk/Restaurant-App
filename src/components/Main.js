@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../routes/Home";
 import About from "../routes/About";
@@ -22,8 +22,19 @@ const times = [
   "22:00",
 ];
 
+const updateTimes = (state, action) => {
+  return [...state];
+};
+
+const initializeTimes = () => {
+  return times;
+};
+
 const Main = () => {
-  const [availableTimes, setAvailableTimes] = useState(times);
+  const [availableTimes, dispatchAvailableTimes] = useReducer(
+    updateTimes,
+    initializeTimes()
+  );
 
   return (
     <Routes>
@@ -35,7 +46,7 @@ const Main = () => {
         element={
           <BookingPage
             availableTimes={availableTimes}
-            setAvailableTimes={setAvailableTimes}
+            dispatchAvailableTimes={dispatchAvailableTimes}
           />
         }
       ></Route>

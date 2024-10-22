@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const BookingForm = ({ availableTimes, setAvailableTimes }) => {
+const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
   const [form, setForm] = useState({
     firstname: "",
     lastname: "",
