@@ -1,21 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./Button";
 
-const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
-  const [form, setForm] = useState({
-    firstname: "",
-    lastname: "",
-    phoneNumber: "",
-    occasion: "birthday",
-    numberOfGuests: 1,
-    date: "",
-    time: "",
-  });
-
-  const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
+const BookingForm = ({
+  availableTimes,
+  handleFormChange,
+  bookingForm,
+  handleSubmit,
+}) => {
   return (
     <div>
       <h2 className="booking-form-title">Reservation</h2>
@@ -25,8 +16,8 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
           <input
             className="booking-form-input"
             type="text"
-            value={form.firstname}
-            onChange={handleChange}
+            value={bookingForm.firstname}
+            onChange={handleFormChange}
             name="firstname"
           />
         </div>
@@ -35,9 +26,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
           <input
             className="booking-form-input"
             type="text"
-            value={form.lastname}
+            value={bookingForm.lastname}
             name="lastname"
-            onChange={handleChange}
+            onChange={handleFormChange}
           />
         </div>
         <div className="booking-form-group">
@@ -45,9 +36,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
           <input
             className="booking-form-input"
             type="text"
-            value={form.phoneNumber}
+            value={bookingForm.phoneNumber}
             name="phoneNumber"
-            onChange={handleChange}
+            onChange={handleFormChange}
           />
         </div>
         <div className="booking-form-group">
@@ -57,9 +48,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
           <select
             className="booking-form-input"
             id="occasion"
-            value={form.occasion}
+            value={bookingForm.occasion}
             name="occasion"
-            onChange={handleChange}
+            onChange={handleFormChange}
           >
             <option>Birthday</option>
             <option>Anniversary</option>
@@ -76,9 +67,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
             min="1"
             max="10"
             id="guests"
-            value={form.numberOfGuests}
+            value={bookingForm.numberOfGuests}
             name="numberOfGuests"
-            onChange={handleChange}
+            onChange={handleFormChange}
           />
         </div>
         <div className="booking-form-group">
@@ -89,9 +80,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
             className="booking-form-input"
             type="date"
             id="res-date"
-            value={form.date}
+            value={bookingForm.date}
             name="date"
-            onChange={handleChange}
+            onChange={handleFormChange}
           />
         </div>
         <div className="booking-form-group">
@@ -101,9 +92,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
           <select
             className="booking-form-input"
             id="res-time"
-            value={form.time}
+            value={bookingForm.time}
             name="time"
-            onChange={handleChange}
+            onChange={handleFormChange}
           >
             {availableTimes.map((time) => (
               <option key={time} value={time}>
@@ -112,7 +103,9 @@ const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
             ))}
           </select>
         </div>
-        <Button className="yellow-button">Reserve a Table</Button>
+        <Button className="yellow-button" onClick={handleSubmit}>
+          Reserve a Table
+        </Button>
       </form>
     </div>
   );

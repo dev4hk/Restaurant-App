@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../routes/Home";
 import About from "../routes/About";
@@ -6,27 +6,20 @@ import Menu from "../routes/Menu";
 import BookingPage from "../routes/BookingPage";
 import OnlineOrder from "../routes/OnlineOrder";
 import Login from "../routes/Login";
+import { fetchAPI, submitAPI } from "../api/api";
 
 export const updateTimes = (state, action) => {
-  return [...state];
+  if (action.type === "UPDATE") {
+    return initializeTimes(action.date);
+  }
 };
 
-export const initializeTimes = () => {
-  const times = [
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ];
-  return times;
+export const initializeTimes = (date) => {
+  return date ? fetchAPI(new Date(date)) : fetchAPI(new Date());
+};
+
+const getToday = () => {
+  return new Date().toISOString().slice(0, 10);
 };
 
 const Main = () => {
@@ -34,6 +27,27 @@ const Main = () => {
     updateTimes,
     initializeTimes()
   );
+
+  const [bookingForm, setBookingForm] = useState({
+    firstname: "",
+    lastname: "",
+    phoneNumber: "",
+    occasion: "birthday",
+    numberOfGuests: 1,
+    date: getToday(),
+    time: availableTimes ? availableTimes[0] : "",
+  });
+
+  const handleFormChange = (e) => {
+    if (e.target.name === "date") {
+      dispatchAvailableTimes({ type: "UPDATE", date: e.target.value });
+    }
+    setBookingForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = () => {
+    console.log(bookingForm);
+  };
 
   return (
     <Routes>
@@ -45,7 +59,9 @@ const Main = () => {
         element={
           <BookingPage
             availableTimes={availableTimes}
-            dispatchAvailableTimes={dispatchAvailableTimes}
+            handleFormChange={handleFormChange}
+            bookingForm={bookingForm}
+            handleSubmit={handleSubmit}
           />
         }
       ></Route>

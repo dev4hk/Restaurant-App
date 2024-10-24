@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import BookingForm from "../components/BookingForm";
 
-const BookingPage = ({ availableTimes, dispatchAvailableTimes }) => {
+const BookingPage = ({
+  availableTimes,
+  handleFormChange,
+  bookingForm,
+  handleSubmit,
+}) => {
   return (
     <main className="booking">
       <div className="booking-page">
         <div></div>
         <BookingForm
           availableTimes={availableTimes}
-          dispatchAvailableTimes={dispatchAvailableTimes}
+          handleFormChange={handleFormChange}
+          bookingForm={bookingForm}
+          handleSubmit={handleSubmit}
         />
         <div></div>
       </div>
