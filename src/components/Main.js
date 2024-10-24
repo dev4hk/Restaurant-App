@@ -52,6 +52,7 @@ const Main = () => {
 
   const submitForm = () => {
     setConfirmation(new Date().getTime().toString());
+    submitAPI(bookingForm);
     navigate("/reservations/confirmation");
   };
 
