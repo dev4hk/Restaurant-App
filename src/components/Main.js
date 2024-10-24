@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "../routes/Home";
 import About from "../routes/About";
 import Menu from "../routes/Menu";
@@ -7,6 +7,7 @@ import BookingPage from "../routes/BookingPage";
 import OnlineOrder from "../routes/OnlineOrder";
 import Login from "../routes/Login";
 import { fetchAPI, submitAPI } from "../api/api";
+import ConfirmedBooking from "./ConfirmedBooking";
 
 export const updateTimes = (state, action) => {
   if (action.type === "UPDATE") {
@@ -23,6 +24,8 @@ const getToday = () => {
 };
 
 const Main = () => {
+  const navigate = useNavigate();
+
   const [availableTimes, dispatchAvailableTimes] = useReducer(
     updateTimes,
     initializeTimes()
@@ -38,6 +41,8 @@ const Main = () => {
     time: availableTimes ? availableTimes[0] : "",
   });
 
+  const [confirmation, setConfirmation] = useState("");
+
   const handleFormChange = (e) => {
     if (e.target.name === "date") {
       dispatchAvailableTimes({ type: "UPDATE", date: e.target.value });
@@ -45,8 +50,9 @@ const Main = () => {
     setBookingForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = () => {
-    console.log(bookingForm);
+  const submitForm = () => {
+    setConfirmation(new Date().getTime().toString());
+    navigate("/reservations/confirmation");
   };
 
   return (
@@ -61,7 +67,16 @@ const Main = () => {
             availableTimes={availableTimes}
             handleFormChange={handleFormChange}
             bookingForm={bookingForm}
-            handleSubmit={handleSubmit}
+            handleSubmit={submitForm}
+          />
+        }
+      ></Route>
+      <Route
+        path="/reservations/confirmation"
+        element={
+          <ConfirmedBooking
+            confirmation={confirmation}
+            bookingForm={bookingForm}
           />
         }
       ></Route>

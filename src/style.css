@@ -28,7 +28,7 @@
 
 .header {
   padding: 20px 60px;
-  max-height: 400px;
+  max-height: 450px;
   display: grid;
   grid-template-columns: 2fr 4fr 4fr 2fr;
   background-color: #495e57;
@@ -64,6 +64,18 @@
   color: white;
   font-size: 20px;
   margin: 0px;
+}
+
+.header-description-group {
+  margin: 20px 0px;
+}
+
+.header-description-group-title {
+  font-size: 20px;
+}
+
+.header-description-group-detail {
+  margin-top: 5px;
 }
 
 .yellow-button {
@@ -371,6 +383,21 @@
   outline: none;
   border: none;
   margin-top: 5px;
+}
+
+.confirmation-wrapper {
+  color: white;
+}
+
+.confirmation-subtitle {
+  margin: 20px 0px;
+}
+
+.confirmation-row {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  column-gap: 20px;
+  margin: 40px 0px;
 }
 
 @media screen and (max-width: 1024px) {

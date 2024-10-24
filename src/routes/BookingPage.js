@@ -1,5 +1,6 @@
 import React from "react";
 import BookingForm from "../components/BookingForm";
+import RestaurantDetail from "../components/RestaurantDetail";
 
 const BookingPage = ({
   availableTimes,
@@ -8,16 +9,19 @@ const BookingPage = ({
   handleSubmit,
 }) => {
   return (
-    <main className="booking">
-      <div className="booking-page">
-        <div></div>
-        <BookingForm
-          availableTimes={availableTimes}
-          handleFormChange={handleFormChange}
-          bookingForm={bookingForm}
-          handleSubmit={handleSubmit}
-        />
-        <div></div>
+    <main>
+      <RestaurantDetail />
+      <div className="booking">
+        <div className="booking-page">
+          <div></div>
+          <BookingForm
+            availableTimes={availableTimes}
+            handleFormChange={handleFormChange}
+            bookingForm={bookingForm}
+            handleSubmit={handleSubmit}
+          />
+          <div></div>
+        </div>
       </div>
     </main>
   );
