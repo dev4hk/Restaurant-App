@@ -13,6 +13,7 @@ export const updateTimes = (state, action) => {
   if (action.type === "UPDATE") {
     return initializeTimes(action.date);
   }
+  return null;
 };
 
 export const initializeTimes = (date) => {
