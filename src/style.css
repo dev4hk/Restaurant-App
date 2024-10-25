@@ -400,6 +400,11 @@
   margin: 40px 0px;
 }
 
+.field-error {
+  color: orange;
+  margin-top: 5px;
+}
+
 @media screen and (max-width: 1024px) {
   .navbar {
     padding-left: 20px;

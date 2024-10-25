@@ -36,24 +36,26 @@ const Main = () => {
     firstname: "",
     lastname: "",
     phoneNumber: "",
-    occasion: "birthday",
+    occasion: "",
     numberOfGuests: 1,
-    date: getToday(),
-    time: availableTimes ? availableTimes[0] : "",
+    date: "",
+    time: "",
   });
 
   const [confirmation, setConfirmation] = useState("");
 
   const handleFormChange = (e) => {
     if (e.target.name === "date") {
+      console.log("triggered");
       dispatchAvailableTimes({ type: "UPDATE", date: e.target.value });
     }
     setBookingForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const submitForm = () => {
+  const submitForm = (form) => {
+    setBookingForm(form);
     setConfirmation(new Date().getTime().toString());
-    submitAPI(bookingForm);
+    submitAPI(form);
     navigate("/reservations/confirmation");
   };
 
@@ -69,7 +71,7 @@ const Main = () => {
             availableTimes={availableTimes}
             handleFormChange={handleFormChange}
             bookingForm={bookingForm}
-            handleSubmit={submitForm}
+            handleFormSubmit={submitForm}
           />
         }
       ></Route>

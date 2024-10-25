@@ -6,7 +6,7 @@ const BookingPage = ({
   availableTimes,
   handleFormChange,
   bookingForm,
-  handleSubmit,
+  handleFormSubmit,
 }) => {
   return (
     <main>
@@ -18,7 +18,7 @@ const BookingPage = ({
             availableTimes={availableTimes}
             handleFormChange={handleFormChange}
             bookingForm={bookingForm}
-            handleSubmit={handleSubmit}
+            handleFormSubmit={handleFormSubmit}
           />
           <div></div>
         </div>
