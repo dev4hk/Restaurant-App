@@ -9,7 +9,9 @@ const Specials = () => {
       <article>
         <div className="specials-header">
           <h2 className="specials-title">This weeks specials!</h2>
-          <Button className="yellow-button">Online Menu</Button>
+          <Button className="yellow-button" ariaLabel="Visit Online Menu">
+            Online Menu
+          </Button>
         </div>
         <div className="specials-cards">
           <SpecialsCard />

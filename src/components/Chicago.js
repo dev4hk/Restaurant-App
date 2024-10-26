@@ -6,7 +6,7 @@ const Chicago = () => {
   return (
     <section className="chicago">
       <div></div>
-      <article className="chicago-details">
+      <article className="chicago-details" aria-label="restaurant intro">
         <h2 className="chicago-title">Little Lemon</h2>
         <h3 className="markazi-text chicago-subtitle">Chicago</h3>
         <p className="chicago-description">
@@ -17,7 +17,7 @@ const Chicago = () => {
           duis enim velit mollit.
         </p>
       </article>
-      <div className="chicago-images">
+      <div className="chicago-images" aria-label="restaurant images">
         <img
           className="chicago-image1"
           src={ChicagoImageOne}

@@ -34,13 +34,13 @@ const BookingForm = ({
     return availableTimes.includes(value) || "Invalid time slot";
   };
 
-  console.log(errors);
   return (
-    <div>
+    <section>
       <h2 className="booking-form-title">Reservation</h2>
       <form
         className="booking-form"
         onSubmit={handleSubmit((data) => {
+          console.log(data);
           handleFormSubmit(data);
         })}
       >
@@ -62,6 +62,7 @@ const BookingForm = ({
             }}
             required
             minLength={2}
+            aria-label="firstname input"
           />
           <p className="field-error" data-testid="error-firstname">
             {errors.firstname?.message}
@@ -84,6 +85,7 @@ const BookingForm = ({
             }}
             required
             minLength={2}
+            aria-label="lastname input"
           />
           <p className="field-error">{errors.lastname?.message}</p>
         </div>
@@ -105,8 +107,8 @@ const BookingForm = ({
             onBlur={() => {
               trigger("phoneNumber");
             }}
-            pattern="/^\d{3}-\d{3}-\d{4}$/"
             required
+            aria-label="phone number input"
           />
           <p className="field-error">{errors.phoneNumber?.message}</p>
         </div>
@@ -128,6 +130,7 @@ const BookingForm = ({
               trigger("occasion");
             }}
             required
+            aria-label="occasion input"
           >
             <option value="">--Select an occasion--</option>
             <option value="Birthday">Birthday</option>
@@ -154,6 +157,7 @@ const BookingForm = ({
               trigger("numberOfGuests");
             }}
             required
+            aria-label="number of guests input"
           />
           <p className="field-error">{errors.numberOfGuests?.message}</p>
         </div>
@@ -174,6 +178,7 @@ const BookingForm = ({
               trigger("date");
             }}
             required
+            aria-label="date input"
           />
           <p className="field-error">{errors.date?.message}</p>
         </div>
@@ -192,6 +197,7 @@ const BookingForm = ({
               trigger("time");
             }}
             required
+            aria-label="time input"
           >
             <option value="">Choose here</option>
             {availableTimes.map((time) => (
@@ -206,7 +212,7 @@ const BookingForm = ({
           Book
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 

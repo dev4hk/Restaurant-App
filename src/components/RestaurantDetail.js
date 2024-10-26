@@ -5,7 +5,7 @@ const RestaurantDetail = () => {
   return (
     <header className="header">
       <div></div>
-      <article className="header-text-wrapper">
+      <section className="header-text-wrapper">
         <div>
           <h3 className="header-title">Little Lemon</h3>
           <h4 className="header-subtitle markazi-text">Chicago</h4>
@@ -29,7 +29,7 @@ const RestaurantDetail = () => {
             <p>Fri - Sat: 11am - 12am</p>
           </div>
         </div>
-      </article>
+      </section>
 
       <div></div>
     </header>

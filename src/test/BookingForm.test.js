@@ -60,7 +60,6 @@ test("validation HTML attribute are added", () => {
   expect(lastnameInput).toHaveAttribute("required");
   expect(lastnameInput).toHaveAttribute("minLength");
   expect(phoneNumberInput).toHaveAttribute("required");
-  expect(phoneNumberInput).toHaveAttribute("pattern");
   expect(occasionInput).toHaveAttribute("required");
   expect(numberOfGuestsInput).toHaveAttribute("required");
   expect(numberOfGuestsInput).toHaveAttribute("min");
@@ -156,7 +155,7 @@ test("validation check - invalid input", async () => {
 test("validation check - valid input", () => {
   const availableTimes = ["11:00", "12:00"];
   const handleFormChange = jest.fn(() => {});
-  const handleFormSubmit = jest.fn(() => {});
+  const handleFormSubmit = jest.fn();
   render(
     <BookingForm
       availableTimes={availableTimes}

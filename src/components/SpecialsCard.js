@@ -4,7 +4,7 @@ import GreekSalad from "../assets/images/greek salad.jpg";
 
 const SpecialsCard = () => {
   return (
-    <div className="specials-card">
+    <section className="specials-card" aria-label="special detail">
       <img className="specials-card-image" src={GreekSalad} alt="card-image" />
       <div className="specials-card-details">
         <div className="specials-card-title-wrapper">
@@ -18,7 +18,7 @@ const SpecialsCard = () => {
         </p>
         <p className="specials-card-delivery-text">Order a delivery</p>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,6 +5,7 @@ const Button = (props) => {
     <div
       className={props.className}
       onClick={props.onClick ? props.onClick : () => {}}
+      aria-label={props.ariaLabel}
     >
       {props.children}
     </div>

@@ -6,14 +6,14 @@ const ConfirmedBooking = ({ confirmation, bookingForm }) => {
     <>
       <RestaurantDetail />
       <main className="booking">
-        <div className="booking-page">
+        <section className="booking-page">
           <div></div>
-          <div className="confirmation-wrapper">
+          <article className="confirmation-wrapper">
             <h2 className="booking-form-title">Confirmation</h2>
             <p className="confirmation-subtitle">
               Your table has been reserved. Please check details below.
             </p>
-            <div className="confirmation-row">
+            <div className="confirmation-row" aria-label="confirmation detail">
               <div>
                 <h3>Confirmation Number:</h3>
                 <h3>Name:</h3>
@@ -29,9 +29,9 @@ const ConfirmedBooking = ({ confirmation, bookingForm }) => {
                 <h3>{bookingForm.date}</h3>
               </div>
             </div>
-          </div>
+          </article>
           <div></div>
-        </div>
+        </section>
       </main>
     </>
   );

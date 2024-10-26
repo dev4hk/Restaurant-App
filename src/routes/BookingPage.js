@@ -11,7 +11,7 @@ const BookingPage = ({
   return (
     <main>
       <RestaurantDetail />
-      <div className="booking">
+      <section className="booking" aria-label="booking section">
         <div className="booking-page">
           <div></div>
           <BookingForm
@@ -21,7 +21,7 @@ const BookingPage = ({
           />
           <div></div>
         </div>
-      </div>
+      </section>
     </main>
   );
 };
