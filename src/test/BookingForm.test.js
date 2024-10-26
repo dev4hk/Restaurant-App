@@ -69,7 +69,7 @@ test("validation HTML attribute are added", () => {
   expect(timeInput).toHaveAttribute("required");
 });
 
-test("validation check - incorrect input", async () => {
+test("validation check - invalid input", async () => {
   const availableTimes = ["11:00", "12:00"];
   const handleFormChange = jest.fn(() => {});
   const handleFormSubmit = jest.fn(() => {});
@@ -122,16 +122,6 @@ test("validation check - incorrect input", async () => {
   fireEvent.blur(selectElement);
   expect(await screen.findByText(/occasion is required/i)).toBeInTheDocument();
 
-  // fireEvent.change(selectElement, { target: { value: "Birthday" } });
-  // fireEvent.blur(selectElement);
-  // const noErrorMessage = screen.queryByText((content, element) => {
-  //   return (
-  //     element.tagName.toLowerCase() === "p" &&
-  //     content.includes("Invalid occasion selected")
-  //   );
-  // });
-  // expect(noErrorMessage).not.toBeInTheDocument();
-
   //Number of Guests
   fireEvent.blur(numberOfGuestsInput);
   expect(
@@ -161,4 +151,70 @@ test("validation check - incorrect input", async () => {
   //Time
   fireEvent.blur(timeInput);
   expect(await screen.findByText(/time is required/i)).toBeInTheDocument();
+});
+
+test("validation check - valid input", () => {
+  const availableTimes = ["11:00", "12:00"];
+  const handleFormChange = jest.fn(() => {});
+  const handleFormSubmit = jest.fn(() => {});
+  render(
+    <BookingForm
+      availableTimes={availableTimes}
+      handleFormChange={handleFormChange}
+      handleFormSubmit={handleFormSubmit}
+    />
+  );
+  const firstnameInput = screen.getByLabelText(/First Name/);
+  const lastnameInput = screen.getByLabelText(/Last Name/);
+  const phoneNumberInput = screen.getByLabelText(/Phone Number/);
+  const occasionInput = screen.getByLabelText(/Occasion/);
+  const numberOfGuestsInput = screen.getByLabelText(/Number of guests/);
+  const dateInput = screen.getByLabelText(/Date/);
+  const timeInput = screen.getByLabelText(/Time/);
+
+  fireEvent.change(firstnameInput, { target: { value: "random" } });
+  fireEvent.blur(firstnameInput);
+  expect(screen.queryByText(/First name is required/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Minimum length is 2/)).not.toBeInTheDocument();
+
+  fireEvent.change(lastnameInput, { target: { value: "user" } });
+  fireEvent.blur(lastnameInput);
+  expect(screen.queryByText(/Last name is required/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Minimum length is 2/)).not.toBeInTheDocument();
+
+  fireEvent.change(phoneNumberInput, { target: { value: "123-456-7890" } });
+  fireEvent.blur(phoneNumberInput);
+  expect(
+    screen.queryByText(/Phone number is required/)
+  ).not.toBeInTheDocument();
+  expect(
+    screen.queryByText(/Invalid phone number format. Use XXX-XXX-XXXX/)
+  ).not.toBeInTheDocument();
+
+  fireEvent.change(occasionInput, { target: { value: "Birthday" } });
+  fireEvent.blur(occasionInput);
+  expect(screen.queryByText(/Occasion is required/)).not.toBeInTheDocument();
+  expect(
+    screen.queryByText(/Invalid occasion selected/)
+  ).not.toBeInTheDocument();
+
+  fireEvent.change(numberOfGuestsInput, { target: { value: "10" } });
+  fireEvent.blur(numberOfGuestsInput);
+  expect(
+    screen.queryByText(/The number of guests is required/)
+  ).not.toBeInTheDocument();
+  expect(screen.queryByText(/Cannot be less than 1/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Cannot be more than 10/)).not.toBeInTheDocument();
+
+  fireEvent.change(dateInput, { target: { value: "2025-01-01" } });
+  fireEvent.blur(dateInput);
+  expect(screen.queryByText(/Date is required/)).not.toBeInTheDocument();
+  expect(
+    screen.queryByText(/Date must be today or in the future/)
+  ).not.toBeInTheDocument();
+
+  fireEvent.change(timeInput, { target: { value: "11:00" } });
+  fireEvent.blur(timeInput);
+  expect(screen.queryByText(/Time is required/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Invalid time slot/)).not.toBeInTheDocument();
 });
