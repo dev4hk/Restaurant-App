@@ -17,7 +17,6 @@ const BookingPage = ({
           <BookingForm
             availableTimes={availableTimes}
             handleFormChange={handleFormChange}
-            bookingForm={bookingForm}
             handleFormSubmit={handleFormSubmit}
           />
           <div></div>

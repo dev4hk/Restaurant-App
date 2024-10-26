@@ -70,7 +70,6 @@ const Main = () => {
           <BookingPage
             availableTimes={availableTimes}
             handleFormChange={handleFormChange}
-            bookingForm={bookingForm}
             handleFormSubmit={submitForm}
           />
         }

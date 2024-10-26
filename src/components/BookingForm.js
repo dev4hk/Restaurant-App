@@ -5,7 +5,6 @@ import { format, isAfter } from "date-fns";
 const BookingForm = ({
   availableTimes,
   handleFormChange,
-  bookingForm,
   handleFormSubmit,
 }) => {
   const {
@@ -24,12 +23,15 @@ const BookingForm = ({
   });
 
   const validateDate = (value) => {
-    console.log("value", value);
     const selectedDate = new Date(value);
     const today = new Date();
     // Set the time to 00:00:00 to ensure it's only the date being compared
     today.setHours(0, 0, 0, 0);
     return selectedDate >= today || "Date must be today or in the future";
+  };
+
+  const validateTime = (value) => {
+    return availableTimes.includes(value) || "Invalid time slot";
   };
 
   console.log(errors);
@@ -43,8 +45,11 @@ const BookingForm = ({
         })}
       >
         <div className="booking-form-group">
-          <label className="booking-form-label">First Name</label>
+          <label className="booking-form-label" htmlFor="firstname">
+            First Name
+          </label>
           <input
+            id="firstname"
             className="booking-form-input"
             name="firstname"
             type="text"
@@ -55,12 +60,19 @@ const BookingForm = ({
             onBlur={() => {
               trigger("firstname");
             }}
+            required
+            minLength={2}
           />
-          <p className="field-error">{errors.firstname?.message}</p>
+          <p className="field-error" data-testid="error-firstname">
+            {errors.firstname?.message}
+          </p>
         </div>
         <div className="booking-form-group">
-          <label className="booking-form-label">Last Name</label>
+          <label className="booking-form-label" htmlFor="lastname">
+            Last Name
+          </label>
           <input
+            id="lastname"
             className="booking-form-input"
             type="text"
             {...register("lastname", {
@@ -70,29 +82,36 @@ const BookingForm = ({
             onBlur={() => {
               trigger("lastname");
             }}
+            required
+            minLength={2}
           />
           <p className="field-error">{errors.lastname?.message}</p>
         </div>
         <div className="booking-form-group">
-          <label className="booking-form-label">Phone Number</label>
+          <label className="booking-form-label" htmlFor="phoneNumber">
+            Phone Number
+          </label>
           <input
+            id="phoneNumber"
             className="booking-form-input"
             type="text"
             {...register("phoneNumber", {
               required: "Phone number is required",
               pattern: {
-                value: "/^d{3}-d{3}-d{4}$/",
-                message: "Phone number should be 111-111-1111 format",
+                value: /^\d{3}-\d{3}-\d{4}$/,
+                message: "Invalid phone number format. Use XXX-XXX-XXXX",
               },
             })}
             onBlur={() => {
               trigger("phoneNumber");
             }}
+            pattern="/^\d{3}-\d{3}-\d{4}$/"
+            required
           />
           <p className="field-error">{errors.phoneNumber?.message}</p>
         </div>
         <div className="booking-form-group">
-          <label className="booking-form-label" htmlFor="occasion">
+          <label htmlFor="occasion" className="booking-form-label">
             Occasion
           </label>
           <select
@@ -100,17 +119,19 @@ const BookingForm = ({
             id="occasion"
             {...register("occasion", {
               required: "Occasion is required",
-              minLength: { value: 1, message: "Please select occasion" },
+              validate: (value) =>
+                value === "Birthday" ||
+                value === "Anniversary" ||
+                "Invalid occasion selected",
             })}
             onBlur={() => {
               trigger("occasion");
             }}
+            required
           >
-            <option value="" disabled selected hidden>
-              Choose here
-            </option>
-            <option value="birthday">Birthday</option>
-            <option value="anniversary">Anniversary</option>
+            <option value="">--Select an occasion--</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
           </select>
           <p className="field-error">{errors.occasion?.message}</p>
         </div>
@@ -132,17 +153,18 @@ const BookingForm = ({
             onBlur={() => {
               trigger("numberOfGuests");
             }}
+            required
           />
           <p className="field-error">{errors.numberOfGuests?.message}</p>
         </div>
         <div className="booking-form-group">
-          <label className="booking-form-label" htmlFor="res-date">
+          <label className="booking-form-label" htmlFor="date">
             Date
           </label>
           <input
             className="booking-form-input"
             type="date"
-            id="res-date"
+            id="date"
             {...register("date", {
               required: "Date is required",
               validate: validateDate,
@@ -151,27 +173,27 @@ const BookingForm = ({
             onBlur={() => {
               trigger("date");
             }}
+            required
           />
           <p className="field-error">{errors.date?.message}</p>
         </div>
         <div className="booking-form-group">
-          <label className="booking-form-label" htmlFor="res-time">
+          <label className="booking-form-label" htmlFor="time">
             Time
           </label>
           <select
             className="booking-form-input"
-            id="res-time"
+            id="time"
             {...register("time", {
               required: "Time is required",
-              minLength: { value: 1, message: "Please select time" },
+              validate: validateTime,
             })}
             onBlur={() => {
               trigger("time");
             }}
+            required
           >
-            <option value="" disabled selected hidden>
-              Choose here
-            </option>
+            <option value="">Choose here</option>
             {availableTimes.map((time) => (
               <option key={time} value={time}>
                 {time}
@@ -180,7 +202,9 @@ const BookingForm = ({
           </select>
           <p className="field-error">{errors.time?.message}</p>
         </div>
-        <input type="submit" className="yellow-button" />
+        <button type="submit" className="yellow-button">
+          Book
+        </button>
       </form>
     </div>
   );
