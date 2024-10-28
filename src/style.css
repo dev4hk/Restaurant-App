@@ -66,6 +66,12 @@
   margin: 0px;
 }
 
+.header-reservation-description {
+  color: white;
+  font-size: 20px;
+  margin: 0px;
+}
+
 .header-description-group {
   margin: 20px 0px;
 }
@@ -289,16 +295,14 @@
 }
 
 .chicago-image1 {
-  max-width: 265px;
-  height: 320px;
+  max-width: 50%;
   object-fit: cover;
-  transform: translate(60px, 60px);
+  transform: translate(60px, 20px);
   z-index: 10;
 }
 
 .chicago-image2 {
-  max-width: 265px;
-  height: 320px;
+  max-width: 50%;
   object-fit: cover;
   transform: translate(-20px, -20px);
 }
@@ -486,6 +490,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  .hamburger-icon {
     cursor: pointer;
   }
 
@@ -536,6 +543,10 @@
   .specials-header {
     display: flex;
     flex-direction: column;
+  }
+
+  .specials-title {
+    margin-bottom: 283800px;
   }
 
   .specials-cards {

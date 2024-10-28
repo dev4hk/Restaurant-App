@@ -10,7 +10,7 @@ const RestaurantDetail = () => {
           <h3 className="header-title">Little Lemon</h3>
           <h4 className="header-subtitle markazi-text">Chicago</h4>
         </div>
-        <div className="header-description">
+        <div className="header-reservation-description">
           <div className="header-description-group">
             <h5 className="header-description-group-title">Location:</h5>
             <p className="header-description-group-detail">

@@ -33,7 +33,7 @@ const Nav = () => {
         </li>
       </ul>
       <div className="navbar-hamburger">
-        <HamburgerMenu />
+        <HamburgerMenu className="hamburger-icon" />
       </div>
     </nav>
   );
