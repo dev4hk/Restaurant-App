@@ -1,6 +1,6 @@
 import React from "react";
 import footerImg from "../assets/images/Mario and Adrian A.jpg";
-import { Link } from "react-router-dom";
+import SmoothLink from "./SmoothLink";
 
 const Footer = () => {
   return (
@@ -10,24 +10,12 @@ const Footer = () => {
       <div className="footer-column">
         <h3 className="footer-title">Doormat Navigation</h3>
         <ul className="footer-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/menu">Menu</Link>
-          </li>
-          <li>
-            <Link to="/reservations">Reservations</Link>
-          </li>
-          <li>
-            <Link to="/order-online">Order Online</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+          <SmoothLink to="/">Home</SmoothLink>
+          <SmoothLink to="/about">About</SmoothLink>
+          <SmoothLink to="/menu">Menu</SmoothLink>
+          <SmoothLink to="/reservations">Reservations</SmoothLink>
+          <SmoothLink to="/order-online">Order Online</SmoothLink>
+          <SmoothLink to="/login">Login</SmoothLink>
         </ul>
       </div>
       <div className="footer-column">
