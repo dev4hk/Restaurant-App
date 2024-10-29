@@ -8,3 +8,7 @@ export function convertTimeToBase12(timeStr) {
   hour = hour % 12 || 12;
   return `${hour.toString().padStart(2, 0)}:${minute} ${suffix}`;
 }
+
+export function toOneDecimalPlace(number) {
+  return number.toFixed(1);
+}

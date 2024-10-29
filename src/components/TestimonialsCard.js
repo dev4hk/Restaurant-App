@@ -1,10 +1,11 @@
 import React from "react";
+import { toOneDecimalPlace } from "../utils";
 
 const TestimonialsCard = ({ item }) => {
   return (
     <article className="testimonials-card">
       <div className="testimonials-card-rate" aria-label="rate">
-        {item.rate}/5
+        {toOneDecimalPlace(item.rate)}/5.0
       </div>
       <div className="testimonials-card-profile" aria-label="user detail">
         <img
