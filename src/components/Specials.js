@@ -4,6 +4,7 @@ import Button from "./Button";
 import GreekSalad from "../assets/images/greek salad.jpg";
 import Bruschetta from "../assets/images/bruchetta.svg";
 import LemonDessert from "../assets/images/lemon dessert.jpg";
+import { useNavigate } from "react-router-dom";
 
 const menuItems = [
   {
@@ -33,13 +34,18 @@ const menuItems = [
 ];
 
 const Specials = () => {
+  const navigate = useNavigate();
   return (
     <section className="specials">
       <div></div>
       <article>
         <div className="specials-header">
           <h2 className="specials-title">This weeks specials!</h2>
-          <Button className="yellow-button" ariaLabel="Visit Online Menu">
+          <Button
+            className="yellow-button"
+            ariaLabel="Visit Online Menu"
+            onClick={() => navigate("/menu")}
+          >
             Online Menu
           </Button>
         </div>

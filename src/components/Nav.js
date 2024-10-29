@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/images/Logo.svg";
 import { ReactComponent as HamburgerMenu } from "../assets/images/icon _hamburger menu.svg";
 import "../style.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,11 +15,13 @@ const Nav = () => {
     setMenuOpen(false);
   };
 
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar">
       <div></div>
       <div className="logo-wrapper">
-        <Logo />
+        <Logo className="logo" onClick={() => navigate("/")} />
       </div>
 
       <ul className={`navbar-list ${menuOpen ? "open" : ""}`}>

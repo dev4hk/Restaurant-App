@@ -15,6 +15,10 @@
   align-items: center;
 }
 
+.logo {
+  cursor: pointer;
+}
+
 .navbar-list {
   display: flex;
   justify-content: space-between;
@@ -57,6 +61,14 @@
 .close-icon {
   display: flex;
   z-index: 10;
+}
+
+.component-placeholder {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
 }
 
 .header {
@@ -401,11 +413,42 @@
   background-color: black;
 }
 
+.booking-description {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.booking-description-title {
+  font-size: 32px;
+  margin: 20px 0px;
+  color: #f4ce14;
+}
+
+.booking-description-detail {
+  font-size: 20px;
+  margin: 20px 0px;
+  line-height: 1.8rem;
+}
+
 .booking-page {
   display: grid;
-  grid-template-columns: 2fr 4fr 6fr;
+  grid-template-columns: 2fr 4fr 4fr 2fr;
   column-gap: 20px;
   padding: 60px;
+}
+
+.booking-detail-image {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.booking-form-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .booking-form-title {
@@ -691,7 +734,16 @@
   }
 
   .booking-page {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 60px 20px;
+  }
+
+  .booking-detail-image {
+    display: none;
+  }
+
+  .booking-form-wrapper {
+    display: block;
   }
 }

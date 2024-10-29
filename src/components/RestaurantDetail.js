@@ -1,5 +1,6 @@
 import React from "react";
 import "../style.css";
+import RestaurantImage from "../assets/images/restaurant.jpg";
 
 const RestaurantDetail = () => {
   return (
@@ -31,6 +32,13 @@ const RestaurantDetail = () => {
         </div>
       </section>
 
+      <section>
+        <img
+          className="booking-detail-image"
+          src={RestaurantImage}
+          alt="restaurant"
+        />
+      </section>
       <div></div>
     </header>
   );
