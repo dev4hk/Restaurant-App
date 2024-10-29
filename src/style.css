@@ -314,12 +314,14 @@
   object-fit: cover;
   transform: translate(60px, 20px);
   z-index: 10;
+  border-radius: 20px;
 }
 
 .chicago-image2 {
   max-width: 50%;
   object-fit: cover;
   transform: translate(-20px, -20px);
+  border-radius: 20px;
 }
 
 .footer {
@@ -336,6 +338,7 @@
   object-fit: cover;
   object-position: 25% 25%;
   margin: auto 0px;
+  border-radius: 20px;
 }
 
 .footer-column {
