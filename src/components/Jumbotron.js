@@ -13,8 +13,9 @@ const Jumbotron = () => {
           <h4 className="header-subtitle markazi-text">Chicago</h4>
         </div>
         <h5 className="header-description" aria-label="header description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Savor authentic Italian cuisine and rustic ambiance. From handcrafted
+          pastas and wood-fired pizzas to delectable desserts, we bring Italy to
+          your table.
         </h5>
         <Button className="yellow-button" ariaLabel="Reservation Page Button">
           Reserve a Table
