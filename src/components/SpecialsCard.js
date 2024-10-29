@@ -1,6 +1,5 @@
 import React from "react";
 import "../style.css";
-import GreekSalad from "../assets/images/greek salad.jpg";
 
 const SpecialsCard = ({ item }) => {
   return (
