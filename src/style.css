@@ -409,6 +409,15 @@
   color: white;
 }
 
+.footer-links li {
+  line-height: 1.8rem;
+
+  & a:hover {
+    color: #f4ce14;
+    transition: 0.2s ease-in;
+  }
+}
+
 .booking {
   background-color: black;
 }

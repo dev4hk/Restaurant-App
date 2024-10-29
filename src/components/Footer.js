@@ -34,13 +34,13 @@ const Footer = () => {
         <h3 className="footer-title">Contact</h3>
         <ul className="footer-links">
           <li>
-            <a>Address</a>
+            <p>123 XXXst, Chicago, IL</p>
           </li>
           <li>
-            <a>Phone Number</a>
+            <p>xxx-xxx-xxxx</p>
           </li>
           <li>
-            <a>Email</a>
+            <p>xxx@xxx.com</p>
           </li>
         </ul>
       </div>
@@ -48,13 +48,13 @@ const Footer = () => {
         <h3 className="footer-title">Social Media Links</h3>
         <ul className="footer-links">
           <li>
-            <a>Address</a>
+            <p>Facebook</p>
           </li>
           <li>
-            <a>Phone Number</a>
+            <p>Instagram</p>
           </li>
           <li>
-            <a>Email</a>
+            <p>Threads</p>
           </li>
         </ul>
       </div>
