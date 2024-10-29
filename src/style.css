@@ -94,12 +94,15 @@
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.yellow-button:hover {
-  background-color: black;
-  color: #f4ce14;
   transition: 0.2s ease-in;
+  &:hover {
+    background-color: black;
+    color: #f4ce14;
+  }
+  &:active {
+    background-color: #495e57;
+    color: #f4ce14;
+  }
 }
 
 .header-image-wrapper {
