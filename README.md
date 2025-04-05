@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant 🍋
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built as part of the Meta Frontend Developer Specialization course. The app showcases a variety of frontend technologies, including JavaScript, React, Bootstrap, and more, with an emphasis on clean and responsive design.
 
-## Available Scripts
+The Little Lemon Restaurant is a fictional restaurant that provides an interactive experience, allowing users to explore the menu, make reservations, and view their order details.
 
-In the project directory, you can run:
+## Usage 🚀
 
-### `npm start`
+Once the app is up and running, you can explore the following features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Menu**: Browse through different categories of food items (appetizers, mains, desserts, drinks).
+- **Reservations**: Book a table for dining by filling out the reservation form.
+- **Reservation Summary**: Review your reservation.
+- **Responsive Design**: The app is fully responsive and works across various devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features 🔧
 
-### `npm test`
+- **Interactive Menu**: The app displays a dynamic menu where users can view various food categories with descriptions and prices.
+- **Reservation System**: Users can make reservations by choosing the date, time, and number of guests.
+- **React Router**: Smooth navigation between different pages (Home, Menu, Reservations, etc.).
+- **API Calls**: Fetching data such as menu items and reservation details through API calls.
+- **React Context**: Centralized state management across different components for managing reservation data.
+- **Hooks**: Leveraging React hooks like `useState` and `useEffect` for managing local state and side effects.
+- **Bootstrap**: Styling the app with Bootstrap to ensure it’s mobile-friendly and has a clean layout.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used ⚙️
 
-### `npm run build`
+This project utilizes the following technologies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **JavaScript**: Core scripting language used for the app's logic and functionality.
+- **React**: The main library used for building the user interface and handling the app's state and routing.
+- **React Router**: For seamless navigation between pages without reloading the browser.
+- **Bootstrap**: For responsive and mobile-first UI components.
+- **API Calls**: Fetching data from external APIs (for menu items, reservations, etc.).
+- **React Context**: Managing global state (like reservation details) across the app.
+- **React Hooks**: Using hooks such as `useState`, `useEffect`, and custom hooks for managing state and side effects.
+- **HTML & CSS**: Structuring and styling the application, following best practices for semantic HTML and modern CSS.
+- **Version Control (Git)**: Version control used for managing the codebase and collaborating effectively.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo Images 🖼️
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here are some screenshots of the app:
 
-### `npm run eject`
+### Homepage - 1
+![Homepage - 1](screenshots/home-1.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Menu Page
+![Menu Page - 2](screenshots/home-2.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Reservation Form
+![Reservation Form](screenshots/reservation.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Reservation Confirmation
+![Reservation Confirmation](screenshots/reservation-confirmation.png)
