@@ -51,4 +51,4 @@ Here are some screenshots of the app:
 ![Reservation Form](screenshots/reservation.png)
 
 ### Reservation Confirmation
-![Reservation Confirmation](screenshots/reservation-confirmation.png)
+![Reservation Confirmation](screenshots/reservation-confirm.png)
